@@ -1,0 +1,174 @@
+<html>
+<head>
+  <title>Home</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..400,0..1">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Freeman&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://gointerstellar.app&size=256">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./browser/index.css" />
+  <script src="./browser/search.js" defer></script>
+  <script src="./baremux/index.js" defer></script>
+  <script src="./browser/index.js" defer></script>
+  <script src="./epoxy/index.js" defer></script>
+  <script src="./uv/uv.bundle.js" defer></script>
+  <script src="./browser/uv/uv.config.js" defer></script>
+  <script src="./browser/register-sw.js" defer></script>
+</head>
+<body>
+  <div id="proxy-div" class="hide-proxy-div">
+    <div id="proxy-nav-bar">
+      <div id="tabBarTabs"></div>
+      <div id="newTab" onclick="newTab()">
+        <i class="fa-solid fa-circle-plus fa-lg"></i>
+      </div>
+    </div>
+
+    <div id="proxy-button-row">
+      <div class="proxy-nav-bar-item" style="cursor: pointer; width: 24px;" onclick="goBack()">
+        <i class="fas fa-arrow-left fa-lg"></i>
+      </div>
+      <div class="proxy-nav-bar-item" style="cursor: pointer; width: 24px;" onclick="goForward()">
+        <i class="fas fa-arrow-right fa-lg"></i>
+      </div>
+      <div class="proxy-nav-bar-item" style="cursor: pointer; width: 24px;" onclick="reloadPage()">
+        <i class="fas fa-redo fa-lg"></i>
+      </div>
+      <div class="proxy-nav-bar-item" style="cursor: pointer;width: 24px;" onclick="goHome()">
+        <i class="fas fa-home fa-lg"></i>
+      </div>
+      <div style="padding: 0;">
+        <form id="nav-bar-form">
+          <input id="nav-bar-address" type="text" placeholder="Search the web" />
+          <input id="uv-search-engine" value="https://www.google.com/search?q=%s" type="hidden" />
+          <input id="uv-start-page" value="https://google.com" type="hidden">
+        </form>
+      </div>
+      <div class="proxy-nav-bar-item" style="cursor: pointer; padding: 8px;" onclick="windowPopout();">
+        <i class="fa-solid fa-up-right-from-square fa-lg"></i>
+      </div>
+      <div class="proxy-nav-bar-item" style="cursor: pointer; padding: 8px;" onclick="proxyFullscreen();">
+        <i class="fas fa-expand fa-lg"></i>
+      </div>
+    </div>
+
+    <span id="frames"></span>
+  </div>
+
+  <ul class="navbar">
+    <li>
+        <a href="/"><span style="margin-top: 0px" class="material-symbols-outlined">cottage</span></a>
+    </li>
+    <li>
+        <a href="/MadFlix"><span class="material-symbols-outlined">movie</span></a>
+    </li>
+    <li>
+        <a href="/browser"><span class="material-symbols-outlined">explore</span></a>
+    </li>
+    <li>
+        <a href="/EggGPT"><span class="material-symbols-outlined">smart_toy</span></a>
+    </li>
+    <li>
+        <hr>
+    </li>
+    <li>
+        <a href="/settings"><span style="margin-top: 0" class="material-symbols-outlined">settings</span></a>
+    </li>
+</ul>
+  <h1>MadEgg Browser</h1>
+  <div class="top-right-menu">
+    <button class="menu-button" onclick="SHS()">Search History Spammer</button>
+  </div>
+
+  <div class="top-left-menu">
+    <button class="menu-button" onclick="AB()">About:blank Cloaker</button>
+  </div>
+
+  <div class="time-date" id="time-date"></div>
+
+  <div class="search-box">
+  <div class="search-containeraa">
+    <button class="search-engine-dropdownaa" onclick="toggleDropdown(0)">
+      <img
+        id="selected-engine-0"
+        src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://google.com&size=256"
+        alt="Google">
+    </button>
+    <form id="uv-form">
+      <input id="uv-search-engine" type="hidden" value="https://www.google.com/search?q=" />
+      <input
+        id="uv-address"
+        autocomplete="off"
+        class="input"
+        type="text"
+        placeholder="Enter a search query or URL" />
+    </form>
+    <div class="dropdown-contentaa" id="engineDropdown-0">
+      <div class="status-messageaa" id="statusMessage-0">Searching with Google</div>
+      <a href="javascript:void(0);" data-newtab="https://www.google.com" data-engine="https://www.google.com/search?q=">
+        <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://google.com&size=256" alt="Google">
+        Google
+      </a>
+      <a href="javascript:void(0);" data-newtab="https://search.brave.com" data-engine="https://search.brave.com/search?q=">
+        <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://brave.com&size=256" alt="Brave">
+        Brave
+      </a>
+      <a href="javascript:void(0);" data-newtab="https://www.bing.com" data-engine="https://www.bing.com/search?q=">
+        <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://bing.com&size=256" alt="Bing">
+        Bing
+      </a>
+      <a href="javascript:void(0);" class="add-custom-engine" onclick="showCustomEngineModal()">
+        <i class="fa-solid fa-plus"></i> Add Custom Engine
+      </a>
+    </div>
+  </div>
+</div>
+<div class="custom-engine-modal" id="custom-engine-modal">
+  <div class="custom-engine-content">
+    <h3>Add Custom Search Engine</h3>
+    <input type="text" id="custom-engine-name" placeholder="Engine Name (e.g., My Search)">
+    <input type="text" id="custom-engine-url" placeholder="Search URL (include %s for query)">
+    <input type="text" id="custom-engine-icon" placeholder="Icon URL (optional)">
+    <input type="text" id="custom-engine-homepage" placeholder="Homepage URL (e.g., https://www.google.com)">
+    <div class="custom-engine-buttons">
+      <button id="add-custom-engine-btn">Add Engine</button>
+      <button id="cancel-custom-engine">Cancel</button>
+    </div>
+  </div>
+</div>
+
+  <div class="bookmarks" id="bookmarks">
+    <a href="javascript:void(0)" class="bookmark" data-url="https://www.youtube.com">
+      <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://youtube.com&size=256" alt="YouTube">
+      <span>YouTube</span>
+    </a>
+    <a href="javascript:void(0)" class="bookmark" data-url=""="https://twitter.com">
+      <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://twitter.com&size=256" alt="Twitter">
+      <span>Twitter</span>
+    </a>
+    <a href="javascript:void(0)" class="bookmark" data-url="https://discord.com">
+      <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://discord.com&size=256" alt="Discord">
+      <span>Discord</span>
+    </a>
+    <a href="javascript:void(0)" class="bookmark" data-url="https://www.nvidia.com/en-us/geforce-now/">
+      <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://nvidia.com&size=256" alt="GeForce Now">
+      <span>GeForce Now</span>
+    </a>
+    <div class="add-bookmark" id="add-bookmark">+ Add Bookmark</div>
+  </div>
+  <div class="rotating-text" id="rotating-text"></div>
+  <div class="add-bookmark-modal" id="add-bookmark-modal">
+    <div class="add-bookmark-content">
+      <input type="text" id="bookmark-name" placeholder="Bookmark Name">
+      <input type="text" id="bookmark-url" placeholder="Bookmark URL">
+      <div class="add-bookmark-buttons">
+        <button id="cancel-bookmark">Cancel</button>
+        <button id="save-bookmark">Save</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
